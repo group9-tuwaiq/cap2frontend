@@ -8,7 +8,7 @@ const Nav = () => {
       <ul>
         <li className="navItem">
           {" "}
-          <Link to="/music">Music</Link>
+          <Link to="/">Music</Link>
         </li>
         <li className="navItem">
           <Link to="/movie">Movie</Link>
