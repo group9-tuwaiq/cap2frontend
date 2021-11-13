@@ -4,6 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Search from "../Search";
 import Media from "../Media";
+import "./style.css";
 
 const BASE_URL = "http://localhost:4000";
 

@@ -1,12 +1,14 @@
 import React from "react";
 import Description from "../Description";
+import "./style.css";
+
 const Media = ({ media }) => {
   return (
-    <div className="Movie">
+    <div className="container">
       <ul>
         {media.map((item) => (
           <>
-            <div>
+            <div className="inner">
               <li key={item.trackId}>
                 {item.trackViewUrl}
                 {item.trackName}

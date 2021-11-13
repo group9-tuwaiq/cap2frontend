@@ -1,17 +1,31 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./style.css";
 
 const Nav = () => {
   return (
-    <div>
-      <Link to="/music">Music</Link>
-      <Link to="/movie">Movie</Link>
-      <Link to="/podcast">Podcast</Link>
-      <Link to="/tvshow">Tvshow</Link>
-      <Link to="/favorite">Favorite</Link>
-
-      
-      <input name="value" placeholder="Search"></input>
+    <div className="nav">
+      <ul>
+        <li className="navItem">
+          {" "}
+          <Link to="/music">Music</Link>
+        </li>
+        <li className="navItem">
+          <Link to="/movie">Movie</Link>
+        </li>
+        <li className="navItem">
+          <Link to="/podcast">Podcast</Link>
+        </li>
+        <li className="navItem">
+          <Link to="/tvshow">Tvshow</Link>
+        </li>
+        <li className="navItem">
+          <Link to="/favorite">Favorite</Link>
+        </li>
+        <li>
+          <input className="input" name="value" placeholder="Search"></input>
+        </li>
+      </ul>
     </div>
   );
 };
