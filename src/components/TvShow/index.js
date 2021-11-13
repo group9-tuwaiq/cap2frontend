@@ -4,33 +4,31 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Search from "../Search";
 import Media from "../Media";
-import "./style.css";
 
 const BASE_URL = "http://localhost:4000";
 
-const Movie = () => {
-  const [movie, setMovie] = useState([]);
+const TvShow = () => {
+  const [tvShow, setTvShow] = useState([]);
 
   useEffect(() => {
-    getAllMovies();
+    getAllTvshow();
   }, []);
 
-  const getAllMovies = async () => {
-    const movie = await axios.get(`${BASE_URL}/movies`);
+  const getAllTvshow = async () => {
+    const tvShow = await axios.get(`${BASE_URL}/tvShow`);
 
-    setMovie(movie.data.results);
+    setTvShow(tvShow.data.results);
   };
   // function addToFav(movieId, userId) {
   //   <i class="fas fa-heart"></i>;
   // }
 
   return (
-    
     <>
-      <Media media={movie} />
-      <Search media={movie} />
+      <Media media={tvShow} />
+      <Search media={tvShow} />
     </>
   );
 };
 
-export default Movie;
+export default TvShow;

@@ -1,17 +1,26 @@
 import React from "react";
-import Description from "../Description"
-const Media = (media) => {
+import Description from "../Description";
+import "./style.css";
+
+const Media = ({ media }) => {
   return (
-    <div className="Movie">
+    <div className="container">
       <ul>
         {media.map((item) => (
           <>
-            <div onClick={<Description media={media} />}>
+            <div className="inner">
               <li key={item.trackId}>
-                {item.trackViewUrl}
+              <video width="750" height="500" controls >
+      <source src={item.previewUrl} type="video/mp4"/>
+     </video>
+                
+                <img src={item.artworkUrl100} />
                 {item.trackName}
-                <p>Directed by :</p>
+                <p>Created by :</p>
                 {item.artistName}
+                <br/>
+                {item.longDescription}
+
               </li>
             </div>
             <button onClick={`()=>{addToFav(${item.trackId})}`}>

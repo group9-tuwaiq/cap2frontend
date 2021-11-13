@@ -4,6 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Search from "../Search";
 import Media from "../Media";
+import "./style.css";
 const BASE_URL = "http://localhost:4000";
 
 const Music = () => {
@@ -15,17 +16,23 @@ const Music = () => {
 
   const getAllMusic = async () => {
     const music = await axios.get(`${BASE_URL}/music`);
-    setMusic(music.data);
+    setMusic(music.data.results);
   };
 
-  function addToFav() {
-    <i class="fas fa-heart"></i>;
-  }
+  // function addToFav() {
+  //   <i class="fas fa-heart"></i>;
+  // }
   return (
-    <>
-    <Media media={music} />
-    <Search media={music} />
-    </>
+   
+      <div className="wrapper">
+        <img
+          className="background"
+          src="https://veraislam.si/wp-content/uploads/2020/05/si-su%C5%BEenj.jpeg"
+        />
+        <Media media={music} />
+        <Search media={music} />
+      </div>
+    
   );
 };
 

@@ -1,1 +1,46 @@
 
+*{
+    margin: 0 ;
+    padding: 0;
+    box-sizing: border-box;
+}
+.nav{
+background-color: #C5C8CA ;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+ 
+}
+
+.navItem {
+  float: left;
+}
+.navItem:hover{
+background-color: #858585;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+li a:hover{
+    color: white;
+}
+
+.input{
+    margin: 3px 0px 3px 70vh;
+    width: 200px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    padding-left: 25px;
+}
+
+

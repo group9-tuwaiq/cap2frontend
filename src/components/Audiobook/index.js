@@ -4,33 +4,31 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Search from "../Search";
 import Media from "../Media";
-import "./style.css";
 
 const BASE_URL = "http://localhost:4000";
 
-const Movie = () => {
-  const [movie, setMovie] = useState([]);
+const Audiobook = () => {
+  const [audiobook, setAudiobook] = useState([]);
 
   useEffect(() => {
-    getAllMovies();
+    getAllAudiobook();
   }, []);
 
-  const getAllMovies = async () => {
-    const movie = await axios.get(`${BASE_URL}/movies`);
+  const getAllAudiobook = async () => {
+    const audiobook = await axios.get(`${BASE_URL}/audiobook`);
 
-    setMovie(movie.data.results);
+    setAudiobook(audiobook.data.results);
   };
   // function addToFav(movieId, userId) {
   //   <i class="fas fa-heart"></i>;
   // }
 
   return (
-    
     <>
-      <Media media={movie} />
-      <Search media={movie} />
+      <Media media={audiobook} />
+      <Search media={audiobook} />
     </>
   );
 };
 
-export default Movie;
+export default Audiobook;
