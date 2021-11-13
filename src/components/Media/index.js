@@ -1,12 +1,12 @@
 import React from "react";
-import Description from "../Description"
-const Media = (media) => {
+import Description from "../Description";
+const Media = ({ media }) => {
   return (
     <div className="Movie">
       <ul>
         {media.map((item) => (
           <>
-            <div onClick={<Description media={media} />}>
+            <div>
               <li key={item.trackId}>
                 {item.trackViewUrl}
                 {item.trackName}
