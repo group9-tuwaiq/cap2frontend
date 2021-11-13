@@ -5,6 +5,7 @@ import Favorite from "./components/Favorite";
 import Search from "./components/Search";
 import Media from "./components/Media";
 import Movie from "./components/Movie";
+import Music from "./components/Music";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/search" element={<Search />} />
         <Route path="/Media/:media" element={<Media />} />
         <Route path="/movie" element={<Movie />} />
+        <Route path="/music" element={<Music />} />
         {/* <Route path="tvshow/" element={<Tvshow />} />
           <Route path="favorite/*" element={<Favorite />} /> */}
       </Routes>

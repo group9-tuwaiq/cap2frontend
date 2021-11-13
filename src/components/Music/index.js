@@ -15,7 +15,7 @@ const Music = () => {
 
   const getAllMusic = async () => {
     const music = await axios.get(`${BASE_URL}/music`);
-    setMusic(music.data);
+    setMusic(music.data.results);
   };
 
   function addToFav() {
@@ -23,8 +23,8 @@ const Music = () => {
   }
   return (
     <>
-      <Media media={movie} />
-      <Search media={movie} />
+      <Media media={music} />
+      <Search media={music} />
     </>
   );
 };
