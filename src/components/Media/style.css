@@ -12,16 +12,9 @@
 
 ul{
     
-	/* display: -webkit-box;
-	display: -ms-flexbox; */
+	
 	display: flex;
-	/* -ms-flex-wrap: wrap; */
 	    flex-wrap: wrap;
-	/* -webkit-box-pack: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
-	-webkit-box-align: center;
-	    -ms-flex-align: center; */
 	        align-items: center;
 	/* -webkit-box-orient: horizontal;
 	-webkit-box-direction: normal;
@@ -31,17 +24,32 @@ ul{
 }
 
 .inner  {
-
-	margin: 10px;
-	width: 250px;
-	height: 300px;
+position: relative;
+	margin: 10px 45px;
+	width: 25%;
+	height: 350px;
 	text-align: center;
-	/* border-radius: 3px;
-	-webkit-transition: 200ms ease-in-out;
-	-o-transition: 200ms ease-in-out; */
+	justify-content: space-between;
 	transition: 200ms ease-in-out;
 	-webkit-box-shadow: 0 0 15px rgba(0,0,0,0.3);
 	        box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+.inner img{ 
+	width: 100%;
+	height: 250px;
+}
+.player{
+width: 100%;
+height: 60px;
+position:absolute;
+bottom: 0px;
+right: 0;
+left: 0;
+z-index: 1;
+
+}
+.moviePlayer{
+	display: none;
 }
 
 .inner li:hover {
