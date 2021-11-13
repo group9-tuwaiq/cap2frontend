@@ -8,6 +8,8 @@ const Nav = () => {
       <Link to="/movie">Movie</Link>
       <Link to="/podcast">Podcast</Link>
       <Link to="/tvshow">Tvshow</Link>
+      <Link to="/software">Software</Link>
+      <Link to="/tvshow">Tvshow</Link>
       <Link to="/favorite">Favorite</Link>
 
       
