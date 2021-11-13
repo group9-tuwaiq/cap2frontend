@@ -9,23 +9,27 @@ const BASE_URL = "http://localhost:4000";
 
 const Movie = () => {
   const [movie, setMovie] = useState([]);
+
   useEffect(() => {
     getAllMovies();
   }, []);
+
   const getAllMovies = async () => {
     const movie = await axios.get(`${BASE_URL}/movies`);
+
     setMovie(movie.data.results);
   };
-  function addToFav(movieId, userId) {
-    <i class="fas fa-heart"></i>;
-  }
+  // function addToFav(movieId, userId) {
+  //   <i class="fas fa-heart"></i>;
+  // }
 
   return (
+    
     <>
-    <Media media={movie} />;
-    <Search media={movie} />
+      <Media media={movie} />
+      <Search media={movie} />
     </>
-  )
+  );
 };
 
 export default Movie;

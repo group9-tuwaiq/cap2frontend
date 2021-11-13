@@ -23,8 +23,8 @@ const Music = () => {
   }
   return (
     <>
-    <Media media={music} />
-    <Search media={music} />
+      <Media media={movie} />
+      <Search media={movie} />
     </>
   );
 };
