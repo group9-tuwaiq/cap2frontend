@@ -7,17 +7,17 @@ import Media from "../Media";
 
 const BASE_URL = "http://localhost:4000";
 
-const Podcast = () => {
-  const [podcast, setPodcast] = useState([]);
+const Audiobook = () => {
+  const [audiobook, setAudiobook] = useState([]);
 
   useEffect(() => {
-    getAllPodcast();
+    getAllAudiobook();
   }, []);
 
-  const getAllPodcast = async () => {
-    const podcast = await axios.get(`${BASE_URL}/podcast`);
+  const getAllAudiobook = async () => {
+    const audiobook = await axios.get(`${BASE_URL}/audiobook`);
 
-    setPodcast(podcast.data.results);
+    setAudiobook(audiobook.data.results);
   };
   // function addToFav(movieId, userId) {
   //   <i class="fas fa-heart"></i>;
@@ -25,10 +25,10 @@ const Podcast = () => {
 
   return (
     <>
-      <Media media={podcast} />
-      <Search media={podcast} />
+      <Media media={audiobook} />
+      <Search media={audiobook} />
     </>
   );
 };
 
-export default Podcast;
+export default Audiobook;
