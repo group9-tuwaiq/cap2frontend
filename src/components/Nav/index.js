@@ -17,15 +17,22 @@ const Nav = () => {
           <Link to="/podcast">Podcast</Link>
         </li>
         <li className="navItem">
-          <Link to="/tvshow">Tvshow</Link>
+          <Link to="/tvShow">Tvshow</Link>
         </li>
         <li className="navItem">
+          <Link to="/audiobook">Audiobook</Link>
+        </li>
+   <li className="navItem">
           <Link to="/favorite">Favorite</Link>
+        </li>
+ <li className="navItem">
+          <Link to="/eBook">eBook</Link>
         </li>
         <li>
           <input className="input" name="value" placeholder="Search"></input>
         </li>
       </ul>
+
     </div>
   );
 };
