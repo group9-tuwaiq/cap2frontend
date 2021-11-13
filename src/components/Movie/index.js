@@ -1,8 +1,8 @@
 import React from "react";
 import BASE_URL from "./../../App";
 import axios from "axios";
-import Description from "../Description";
-
+import Description from "./components/Description";
+import { useEffect,useState } from "react";
 const Movie = () => {
   const [movie, setMovie] = useState([]);
   useEffect(() => {
@@ -29,7 +29,7 @@ const Movie = () => {
                 {movie.artistName}
               </li>
             </div>
-            <button onClick={`()=>{addToFav(${movie.trackId},${userId})}`}>
+            <button onClick={`()=>{addToFav(${movie.trackId})}`}>
               <i class="far fa-heart"></i>
             </button>
           </>

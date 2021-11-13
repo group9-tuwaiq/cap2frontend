@@ -1,6 +1,8 @@
 import React from 'react'
 import BASE_URL from './../../App'
 import axios from "axios";
+import {Description} from './components/Description';
+import { useEffect,useState } from "react";
 const Music = () => {
     const [music, setMusic] = useState([]);
 
@@ -28,7 +30,7 @@ const Music = () => {
                 <p>{music.artistName}</p>
               </li>
             </div>
-            <button onClick={`()=>{addToFav(${music.trackId},${userId})}`}>
+            <button onClick={`()=>{addToFav(${music.trackId})}`}>
               <i class="far fa-heart"></i>
             </button>
           </>
