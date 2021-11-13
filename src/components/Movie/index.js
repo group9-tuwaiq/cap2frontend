@@ -1,9 +1,10 @@
 import React from "react";
 // import BASE_URL from "./../../App";
 import axios from "axios";
-import Description from "./components/Description";
 import { useEffect, useState } from "react";
 import Search from "../Search";
+import Media from "../Media";
+
 const BASE_URL = "http://localhost:4000";
 
 const Movie = () => {

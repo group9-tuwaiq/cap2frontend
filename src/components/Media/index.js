@@ -1,5 +1,5 @@
 import React from "react";
-
+import Description from "../Description"
 const Media = (media) => {
   return (
     <div className="Movie">

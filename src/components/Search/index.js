@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
+import { useState } from "react";
 
+const BASE_URL = "http://localhost:4000";
 const Search = () => {
   const [result, setResult] = useState([]);
   const [media, setMedia] = useState([]);

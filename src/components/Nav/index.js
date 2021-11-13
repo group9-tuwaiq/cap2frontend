@@ -1,15 +1,13 @@
 import React from "react";
 import {
-  BrowserRouter,
   Routes,
   Route,
   NavLink,
   Router,
 } from "react-router-dom";
-import Movie from "./components/Movie";
-import Music from "./components/Music";
-import ReactDOM from "react-dom";
-
+import Favorite from "../Favorite";
+import Search from "../Search";
+import Media from "../Media";
 const Nav = () => {
   return (
     <div>
@@ -21,16 +19,15 @@ const Nav = () => {
         <NavLink to="favorite">Favorite</NavLink>
       </Router>
 
-      {/* <BrowserRouter> */}
+      
       <Routes>
         {/* <Route path="/" element={<Home />} /> */}
-        <Route exact path="/movie" element={<Movie />} />
-        <Route exact path="/music" element={<Music />} />
-        {/* <Route path="podcast/" element={<Podcast />} />
-          <Route path="tvshow/" element={<Tvshow />} />
+        <Route exact path="/favorite" element={<Favorite />} />
+        <Route exact path="/search" element={<Search />} />
+        <Route path="/Media/:media" element={<Media />} />
+          {/* <Route path="tvshow/" element={<Tvshow />} />
           <Route path="favorite/*" element={<Favorite />} /> */}
       </Routes>
-      {/* </BrowserRouter> */}
       <input name="value" placeholder="Search"></input>
     </div>
   );
