@@ -16,6 +16,9 @@ const Media = ({ media }) => {
                 {item.trackName}
                 <p>Created by :</p>
                 {item.artistName}
+                <br/>
+                {item.longDescription}
+
               </li>
             </div>
             <button onClick={`()=>{addToFav(${item.trackId})}`}>
