@@ -11,11 +11,11 @@ const TvShow = () => {
   const [tvShow, setTvShow] = useState([]);
 
   useEffect(() => {
-    getAllMovies();
+    getAllTvshow();
   }, []);
 
-  const getAllMovies = async () => {
-    const tvShow = await axios.get(`${BASE_URL}/movies`);
+  const getAllTvshow = async () => {
+    const tvShow = await axios.get(`${BASE_URL}/tvShow`);
 
     setTvShow(tvShow.data.results);
   };

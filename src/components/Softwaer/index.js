@@ -11,11 +11,11 @@ const Software = () => {
   const [software, setSoftware] = useState([]);
 
   useEffect(() => {
-    getAllMovies();
+    getAllSoftware();
   }, []);
 
-  const getAllMovies = async () => {
-    const software = await axios.get(`${BASE_URL}/movies`);
+  const getAllSoftware = async () => {
+    const software = await axios.get(`${BASE_URL}/software`);
 
     setSoftware(software.data.results);
   };

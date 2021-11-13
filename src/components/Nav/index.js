@@ -9,7 +9,8 @@ const Nav = () => {
       <Link to="/podcast">Podcast</Link>
       <Link to="/tvshow">Tvshow</Link>
       <Link to="/software">Software</Link>
-      <Link to="/tvshow">Tvshow</Link>
+      <Link to="/ebook">eBook</Link>
+      <Link to="/audiobook">audiobook</Link>
       <Link to="/favorite">Favorite</Link>
 
       

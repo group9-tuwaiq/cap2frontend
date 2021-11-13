@@ -8,7 +8,10 @@ import Movie from "./components/Movie";
 import Music from "./components/Music";
 import Bodcast from "./components/Bodcast";
 import TvShow from "./components/TvShow";
-import Software from "./components/Softwaer"
+import Software from "./components/Softwaer";
+import Ebook from "./components/Ebook";
+import Audiobook from "./components/Audiobook";
+
 function App() {
   return (
     <div className="App">
@@ -23,6 +26,8 @@ function App() {
         <Route path="/music" element={<Music />} />
         <Route path="/tvshow" element={<TvShow />} />
         <Route path="/software" element={<Software />} />
+        <Route path="/ebook" element={<Ebook />} />
+        <Route path="/audiobook" element={<Audiobook />} />
         <Route path="/favorite" element={<Favorite />} />
       </Routes>
     </div>
