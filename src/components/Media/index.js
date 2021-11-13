@@ -10,7 +10,7 @@ const Media = ({ media }) => {
               <li key={item.trackId}>
                 {item.trackViewUrl}
                 {item.trackName}
-                <p>Directed by :</p>
+                <p>Created by :</p>
                 {item.artistName}
               </li>
             </div>
