@@ -4,6 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Search from "../Search";
 import Media from "../Media";
+import "./style.css";
 
 const BASE_URL = "http://localhost:4000";
 
@@ -20,10 +21,16 @@ const Movie = () => {
   };
 
   return (
-    <>
+
+    <div className="wrapper">
+      <img
+        className="movieBackground"
+        src="https://img5.goodfon.com/wallpaper/nbig/c/af/sssssss-aaaaaaaaaaa-ddddddddd-fffffffff-rrrrrrr.jpg"
+      />
+
       <Media media={movie} />
       <Search media={movie} />
-    </>
+    </div>
   );
 };
 

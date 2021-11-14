@@ -4,28 +4,33 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Search from "../Search";
 import Media from "../Media";
+import "./style.css";
 
 const BASE_URL = "http://localhost:4000";
 
-const Bodcast = () => {
-  const [bodcast, setBodcast] = useState([]);
+const Podcast = () => {
+  const [podcast, setPodcast] = useState([]);
 
   useEffect(() => {
-    getAllMovies();
+    getAllPodcast();
   }, []);
 
-  const getAllMovies = async () => {
-    const bodcast = await axios.get(`${BASE_URL}/movies`);
+  const getAllPodcast = async () => {
+    const podcast = await axios.get(`${BASE_URL}/podcast`);
 
-    setBodcast(bodcast.data.results);
+    setPodcast(podcast.data.results);
   };
 
   return (
-    <>
-      <Media media={bodcast} />
-      <Search media={bodcast} />
-    </>
+    <div className="wrapper">
+      <img
+        className="podcatBg"
+        src="https://static.sonovente.com/img/front/cms/eb3c9a01c223fbf3d59a2fdd3ef13929.jpg"
+      />
+      <Media media={podcast} />
+      <Search media={podcast} />
+    </div>
   );
 };
 
-export default Bodcast;
+export default Podcast;
