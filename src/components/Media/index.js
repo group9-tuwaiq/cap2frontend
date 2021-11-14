@@ -11,7 +11,6 @@ const Media = ({ media }) => {
   const [newResult, setNewResult] = useState("");
   const navigate = useNavigate();
 
-
   function describe(item) {
     axios
       .post(`${BASE_URL}/getItemDetails`, {
@@ -24,92 +23,104 @@ const Media = ({ media }) => {
         console.log(error);
       });
   }
-
+  const [favList, setFavList] = useState([]);
   function addToFav(item) {
-    axios
-      .post(`${BASE_URL}/fav`, {
-        result: item,
-      })
-      .then(function (res) {
-        console.log("added to favorite");
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    console.log(item, "string local storage");
+    setFavList([...favList, {item}]);
+    localStorage.setItem("favList", JSON.stringify(favList));
   }
   function search() {
-
-
     let result = media.filter((item) => {
-      // eslint-disable-next-line
       return (
-
         item.trackName.toLowerCase() == searchField.toLowerCase() ||
         item.artistName.toLowerCase() == searchField.toLowerCase()
-
-    //     // eslint-disable-next-line
-    //     item.trackName.toLowerCase() == textSearch.toLowerCase() ||
-    //     // eslint-disable-next-line
-    //     item.artistName.toLowerCase() == textSearch.toLowerCase()
-
       );
     });
-    console.log(result[0])
+    console.log(result[0]);
     setNewResult(result[0]);
   }
 
-
   const handleChange = (e) => {
-    console.log(searchField,"searchField")
+    console.log(searchField, "searchField");
     setSearchField(e.target.value);
   };
 
   return (
     <>
       <input
-        onChange={(e)=>{handleChange(e)}}
+        onChange={(e) => {
+          handleChange(e);
+        }}
         className="input"
         name="value"
         placeholder="Search"
       ></input>
-      <button onClick={()=>{search()}}>search</button>
+      <button
+        onClick={() => {
+          search();
+        }}
+      >
+        search
+      </button>
       <div className="container">
         <ul>
-          {newResult ? <div>{newResult.artistName} <button onClick={()=>{setNewResult("")}}>go back</button> </div>:media.map((item) => (
-            <>
-              <li></li>
-              <div
-                className="inner"
+          {newResult ? (
+            <div>
+              {newResult.artistName}{" "}
+              <button
                 onClick={() => {
-                  describe(item);
+                  setNewResult("");
                 }}
               >
-                <li key={item.trackId}>
-                  <img src={item.artworkUrl100} />
-                  {item.trackName}
-                  <p>Created by :</p>
-                  {item.artistName}
-                  {/* <br /> */}
-                  {/* {item.longDescription} */}
-                  <video
-                    className={
-                      media.kind == "feature-movie" ? "moviePlayer" : "player"
-                    }
-                    controls
+                go back
+              </button>{" "}
+            </div>
+          ) : (
+            media.map((item) => (
+              <>
+                <div className="cards">
+                  <div
+                    className="inner"
+                    onClick={() => {
+                      describe(item);
+                    }}
                   >
-                    <source src={item.previewUrl} type="video/mp4" />
-                  </video>
-                </li>
-              </div>
-              <button onClick={()=>{addToFav(item)}}>
-                <i class="far fa-heart"></i>
-              </button>
-            </>
-          ))}
+                    <li key={item.trackId}>
+                      <img src={item.artworkUrl100} />
+                      {item.trackName}
+                      <p>Created by :</p>
+                      {item.artistName}
+                      {/* <br /> */}
+                      {/* {item.longDescription} */}
+                      <video
+                        className={
+                          media.kind == "feature-movie"
+                            ? "moviePlayer"
+                            : "player"
+                        }
+                        controls
+                      >
+                        <source src={item.previewUrl} type="video/mp4" />
+                      </video>
+                    </li>
+                  </div>
+                  <div className="favBtn">
+                    <button
+                      onClick={() => {
+                        addToFav({ item });
+                      }}
+                    >
+                      favorite
+                    </button>
+                  </div>
+                </div>
+              </>
+            ))
+          )}
         </ul>
       </div>
     </>
-  )
+  );
 };
 
 export default Media;

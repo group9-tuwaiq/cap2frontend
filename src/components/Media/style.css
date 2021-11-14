@@ -60,3 +60,9 @@ z-index: 1;
 }
 
 
+
+
+.favBtn{
+	position: absolute;
+	right: 100px;
+}
