@@ -1,10 +1,12 @@
 import React from "react";
+import { useEffect, useState } from "react";
+import Media from "../Media";
 import { Link } from "react-router-dom";
 import "./style.css";
 
 const Nav = () => {
+  
   return (
-
     <div className="nav">
       <ul>
         <li className="navItem">
@@ -23,18 +25,14 @@ const Nav = () => {
         <li className="navItem">
           <Link to="/audiobook">Audiobook</Link>
         </li>
-   {/* <li className="navItem">
+        {/* <li className="navItem">
           <Link to="/favorite">Favorite</Link>
         </li> */}
- <li className="navItem">
+        <li className="navItem">
           <Link to="/eBook">eBook</Link>
         </li>
-        <li>
-          <input className="input" name="value" placeholder="Search"></input>
-        </li>
+        
       </ul>
-
-
     </div>
   );
 };

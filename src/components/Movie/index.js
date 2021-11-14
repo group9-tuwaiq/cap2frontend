@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Search from "../Search";
 import Media from "../Media";
 import "./style.css";
+import Description from "../Description";
 
 const BASE_URL = "http://localhost:4000";
 
@@ -30,6 +31,7 @@ const Movie = () => {
 
       <Media media={movie} />
       <Search media={movie} />
+      <Description media={movie}/>
     </div>
   );
 };

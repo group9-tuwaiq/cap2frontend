@@ -1,6 +1,7 @@
 import React from "react";
 // import BASE_URL from "./../../App";
 import axios from "axios";
+import Description from "../Description";
 import { useEffect, useState } from "react";
 import Search from "../Search";
 import Media from "../Media";
@@ -24,6 +25,7 @@ const Software = () => {
     <>
       <Media media={software} />
       <Search media={software} />
+      <Description media={software}/>
     </>
   );
 };

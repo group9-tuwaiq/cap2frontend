@@ -2,6 +2,7 @@ import React from "react";
 // import BASE_URL from "./../../App";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Description from "../Description";
 import Search from "../Search";
 import Media from "../Media";
 import "./style.css";
@@ -29,6 +30,7 @@ const TvShow = () => {
       />
       <Media media={tvShow} />
       <Search media={tvShow} />
+      <Description media={tvShow}/>
     </div>
   );
 };

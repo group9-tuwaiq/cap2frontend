@@ -1,58 +1,105 @@
 import React from "react";
-
 import axios from "axios";
-import Search from "../Search";
+import SearchResult from "../SearchResult";
 import { useNavigate } from "react-router-dom";
-
+import { useState } from "react";
 import Description from "../Description";
 import "./style.css";
 
+const BASE_URL = "http://localhost:4000";
+
 const Media = ({ media }) => {
+  const [searchField, setSearchField] = useState("");
+  const [newResult, setNewResult] = useState("");
   const navigate = useNavigate();
-  function search(e) {
-    let textSearch = e.target.value;
-    let result = media.filter((item) => {
-      return (
-        item.trackName.toLowerCase() == textSearch.toLowerCase() ||
-        item.artistName.toLowerCase() == textSearch.toLowerCase()
-      );
-    });
-    return <Search result={result} />;
-  }
 
   function describe(item) {
-    navigate(`/description/${{ item }}`);
+    axios
+      .post(`${BASE_URL}/getItemDetails`, {
+        result: item,
+      })
+      .then(function (res) {
+        navigate(`/description/${item.trackId}`);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
+
+  function addToFav(item) {
+    axios
+      .post(`${BASE_URL}/fav`, {
+        result: item,
+      })
+      .then(function (res) {
+        console.log("added to favorite");
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+  function search() {
+    let result = media.filter((item) => {
+      return (
+        item.trackName.toLowerCase() == searchField.toLowerCase() ||
+        item.artistName.toLowerCase() == searchField.toLowerCase()
+      );
+    });
+    console.log(result[0])
+    setNewResult(result[0]);
+    // return <SearchResult filteredPersons={result[0]} />;
+  }
+
+  const handleChange = (e) => {
+    console.log(searchField,"searchField")
+    setSearchField(e.target.value);
+  };
+
   return (
-    <div className="container">
-      <ul>
-        {media.map((item) => (
-          <>
-            <div className="inner">
-              <li key={item.trackId}>
-                <img src={item.artworkUrl100} />
-                {item.trackName}
-                <p>Created by :</p>
-                {item.artistName}
-                {/* <br /> */}
-                {/* {item.longDescription} */}
-                <video
-                  className={
-                    media.kind == "feature-movie" ? "moviePlayer" : "player"
-                  }
-                  controls
-                >
-                  <source src={item.previewUrl} type="video/mp4" />
-                </video>
-              </li>
-            </div>
-            <button onClick={`()=>{addToFav(${item.trackId})}`}>
-              <i class="far fa-heart"></i>
-            </button>
-          </>
-        ))}
-      </ul>
-    </div>
+    <>
+      <input
+        onChange={(e)=>{handleChange(e)}}
+        className="input"
+        name="value"
+        placeholder="Search"
+      ></input>
+      <button onClick={()=>{search()}}>search</button>
+      <div className="container">
+        <ul>
+          {newResult ? <div>{newResult.artistName} <button onClick={()=>{setNewResult("")}}>go back</button> </div>:media.map((item) => (
+            <>
+              <li></li>
+              <div
+                className="inner"
+                onClick={() => {
+                  describe(item);
+                }}
+              >
+                <li key={item.trackId}>
+                  <img src={item.artworkUrl100} />
+                  {item.trackName}
+                  <p>Created by :</p>
+                  {item.artistName}
+                  {/* <br /> */}
+                  {/* {item.longDescription} */}
+                  <video
+                    className={
+                      media.kind == "feature-movie" ? "moviePlayer" : "player"
+                    }
+                    controls
+                  >
+                    <source src={item.previewUrl} type="video/mp4" />
+                  </video>
+                </li>
+              </div>
+              <button onClick={()=>{addToFav(item)}}>
+                <i class="far fa-heart"></i>
+              </button>
+            </>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 };
 

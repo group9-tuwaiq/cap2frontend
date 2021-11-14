@@ -33,7 +33,7 @@ function App() {
         <Route path="/ebook" element={<Ebook />} />
         <Route path="/audiobook" element={<Audiobook />} />
         <Route path="/favorite" element={<Favorite />} />
-        <Route path="/description/:item" element={<Description />} />
+        <Route path="/description/:id" element={<Description />} />
       </Routes>
     </div>
   );
