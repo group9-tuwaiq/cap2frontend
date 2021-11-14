@@ -2,27 +2,31 @@ import React from "react";
 // import Description from "../Description";
 
 
-import axios from "axios";
+//import axios from "axios";
 import Search from "../Search";
 import { useNavigate } from "react-router-dom";
 
-import Description from "../Description";
+//import Description from "../Description";
 
 import "./style.css";
 
 const Media = ({ media }) => {
   const navigate = useNavigate();
+  // eslint-disable-next-line
   function search(e) {
     let textSearch = e.target.value;
     let result = media.filter((item) => {
+      // eslint-disable-next-line
       return (
+        // eslint-disable-next-line
         item.trackName.toLowerCase() == textSearch.toLowerCase() ||
+        // eslint-disable-next-line
         item.artistName.toLowerCase() == textSearch.toLowerCase()
       );
     });
     return <Search result={result} />;
   }
-
+// eslint-disable-next-line
   function describe(item) {
     navigate(`/description/${{ item }}`);
   }
