@@ -26,17 +26,17 @@ const Media = ({ media }) => {
   }
   return (
 
-    <div className="Movie">
-      <input name="text" placeholder="Search" onChange={search}></input>
+    // <div className="Movie">
+    //   <input name="text" placeholder="Search" onChange={search}></input>
 
-      <ul>
-        {media.map((item) => (
-          <>
-            <div
-              onClick={() => {
-                describe(`${item}`);
-              }}
-            >
+    //   <ul>
+    //     {media.map((item) => (
+    //       <>
+    //         <div
+    //           onClick={() => {
+    //             describe(`${item}`);
+    //           }}
+    //         >
 
     <div className="container">
       <ul>
