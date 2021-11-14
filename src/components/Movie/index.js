@@ -28,7 +28,7 @@ const Movie = () => {
     <div className="wrapper">
       <img
         className="movieBackground"
-        src="https://img5.goodfon.com/wallpaper/nbig/c/af/sssssss-aaaaaaaaaaa-ddddddddd-fffffffff-rrrrrrr.jpg"
+        src="https://img5.goodfon.com/wallpaper/nbig/c/af/sssssss-aaaaaaaaaaa-ddddddddd-fffffffff-rrrrrrr.jpg"alt="background"
       />
       <Media media={movie} />
       <Search media={movie} />

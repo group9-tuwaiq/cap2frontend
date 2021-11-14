@@ -27,7 +27,7 @@ const Music = () => {
       <div className="wrapper">
         <img
           className="background"
-          src="https://veraislam.si/wp-content/uploads/2020/05/si-su%C5%BEenj.jpeg"
+          src="https://veraislam.si/wp-content/uploads/2020/05/si-su%C5%BEenj.jpeg"alt="background"
         />
         <Media media={music} />
         <Search media={music} />

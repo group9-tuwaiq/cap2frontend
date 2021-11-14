@@ -25,8 +25,8 @@ const Audiobook = () => {
   // }
 
   return (
+    // eslint-disable-next-line
     <div className="audio">
-      // eslint-disable-next-line
       <img
         className="audio-background"
         src="https://ebookfriendly.com/wp-content/uploads/2020/09/Audiobook-app-feature-wishlist.jpg" alt="background"

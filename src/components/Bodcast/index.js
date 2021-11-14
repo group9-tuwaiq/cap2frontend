@@ -25,8 +25,9 @@ const Podcast = () => {
   // }
 
   return (
+          // eslint-disable-next-line
+
     <div className="wrapper">
-      // eslint-disable-next-line
       <img
         className="podcatBg"
         src="https://static.sonovente.com/img/front/cms/eb3c9a01c223fbf3d59a2fdd3ef13929.jpg" alt="background"
