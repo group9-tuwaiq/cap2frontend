@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import "./style.css";
 
 const Nav = () => {
-  
   return (
     <div className="nav">
       <ul>
@@ -25,13 +24,13 @@ const Nav = () => {
         <li className="navItem">
           <Link to="/audiobook">Audiobook</Link>
         </li>
-        {/* <li className="navItem">
-          <Link to="/favorite">Favorite</Link>
-        </li> */}
+
         <li className="navItem">
           <Link to="/eBook">eBook</Link>
         </li>
-        
+        <li className="navItem">
+          <Link to="/favorite">Favorite</Link>
+        </li>
       </ul>
     </div>
   );
