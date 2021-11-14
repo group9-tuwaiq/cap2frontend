@@ -25,10 +25,12 @@ const Ebook = () => {
   // }
 
   return (
+          // eslint-disable-next-line
+
     <div className="ebook">
       <img
         className="ebook-background"
-        src="https://i.pinimg.com/564x/84/47/07/844707763e75f6873dbab5ad05927ed2.jpg"
+        src="https://i.pinimg.com/564x/84/47/07/844707763e75f6873dbab5ad05927ed2.jpg" alt="background"
       />
       <Media media={ebook} />
       <Search media={ebook} />

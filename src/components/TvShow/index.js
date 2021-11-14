@@ -25,7 +25,7 @@ const TvShow = () => {
     <div className="tvShow">
       <img
         className="tvShow-background"
-        src="https://ihearttvclub.com/wp-content/uploads/2020/06/c0def36f4e072e96218adbb2276c2f6a-2048x1536.jpg"
+        src="https://ihearttvclub.com/wp-content/uploads/2020/06/c0def36f4e072e96218adbb2276c2f6a-2048x1536.jpg"alt="background"
       />
       <Media media={tvShow} />
       <Search media={tvShow} />
