@@ -24,7 +24,7 @@ const Software = () => {
   return (
     <>
       <Media media={software} />
-      <Search media={software} />
+      {/* <Search media={software} /> */}
       <Description media={software}/>
     </>
   );

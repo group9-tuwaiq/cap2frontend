@@ -30,7 +30,7 @@ const Movie = () => {
       />
 
       <Media media={movie} />
-      <Search media={movie} />
+      {/* <Search media={movie} /> */}
       <Description media={movie}/>
     </div>
   );

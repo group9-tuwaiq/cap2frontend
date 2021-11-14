@@ -31,7 +31,7 @@ const Music = () => {
           src="https://veraislam.si/wp-content/uploads/2020/05/si-su%C5%BEenj.jpeg"alt="background"
         />
         <Media media={music} />
-        <Search media={music} />
+        {/* <Search media={music} /> */}
         <Description media={music}/>
       </div>
     

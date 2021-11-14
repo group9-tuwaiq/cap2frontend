@@ -33,7 +33,7 @@ const Audiobook = () => {
         src="https://ebookfriendly.com/wp-content/uploads/2020/09/Audiobook-app-feature-wishlist.jpg" alt="background"
       />
       <Media media={audiobook} />
-      <Search media={audiobook} />
+      {/* <Search media={audiobook} /> */}
       <Description media={audiobook}/>
     </div>
   );

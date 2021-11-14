@@ -31,7 +31,7 @@ const Podcast = () => {
         src="https://static.sonovente.com/img/front/cms/eb3c9a01c223fbf3d59a2fdd3ef13929.jpg" alt="background"
       />
       <Media media={podcast} />
-      <Search media={podcast} />
+      {/* <Search media={podcast} /> */}
       <Description media={podcast}/>
     </div>
   );
