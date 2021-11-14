@@ -9,8 +9,12 @@ import Music from "./components/Music";
 import Bodcast from "./components/Bodcast";
 import TvShow from "./components/TvShow";
 import Software from "./components/Softwaer";
+
+import Description from "./components/Description";
+
 import Ebook from "./components/Ebook";
 import Audiobook from "./components/Audiobook";
+
 
 function App() {
   return (
@@ -19,8 +23,8 @@ function App() {
 
       <Routes>
         <Route exact path="/favorite" element={<Favorite />} />
-        <Route exact path="/search" element={<Search />} />
-        <Route path="/Media/:media" element={<Media />} />
+        {/* <Route exact path="/search" element={<Search />} /> */}
+        {/* <Route path="/Media/:media" element={<Media />} /> */}
         <Route path="/movie" element={<Movie />} />
         <Route path="/podcast" element={<Bodcast />} />
         <Route path="/" element={<Music />} />
@@ -29,6 +33,7 @@ function App() {
         <Route path="/ebook" element={<Ebook />} />
         <Route path="/audiobook" element={<Audiobook />} />
         <Route path="/favorite" element={<Favorite />} />
+        <Route path="/description/:item" element={<Description />} />
       </Routes>
     </div>
   );

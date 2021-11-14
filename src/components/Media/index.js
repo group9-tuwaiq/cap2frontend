@@ -1,8 +1,31 @@
 import React from "react";
 // import Description from "../Description";
+
+
+import axios from "axios";
+import Search from "../Search";
+import { useNavigate } from "react-router-dom";
+
+import Description from "../Description";
+
 import "./style.css";
 
 const Media = ({ media }) => {
+  const navigate = useNavigate();
+  function search(e) {
+    let textSearch = e.target.value;
+    let result = media.filter((item) => {
+      return (
+        item.trackName.toLowerCase() == textSearch.toLowerCase() ||
+        item.artistName.toLowerCase() == textSearch.toLowerCase()
+      );
+    });
+    return <Search result={result} />;
+  }
+
+  function describe(item) {
+    navigate(`/description/${{ item }}`);
+  }
   return (
     <div className="container">
       <ul>
@@ -17,6 +40,7 @@ const Media = ({ media }) => {
                 {item.artistName}
               
                  <video className={media.kind === "feature-movie"? "moviePlayer" : "player"} controls>
+
                   <source src={item.previewUrl} type="video/mp4" />
                 </video>
               </li>
