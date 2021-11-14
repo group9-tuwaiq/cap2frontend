@@ -19,9 +19,6 @@ const TvShow = () => {
 
     setTvShow(tvShow.data.results);
   };
-  // function addToFav(movieId, userId) {
-  //   <i class="fas fa-heart"></i>;
-  // }
 
   return (
     <>

@@ -19,9 +19,6 @@ const Bodcast = () => {
 
     setBodcast(bodcast.data.results);
   };
-  // function addToFav(movieId, userId) {
-  //   <i class="fas fa-heart"></i>;
-  // }
 
   return (
     <>

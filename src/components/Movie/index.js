@@ -16,15 +16,10 @@ const Movie = () => {
 
   const getAllMovies = async () => {
     const movie = await axios.get(`${BASE_URL}/movies`);
-
     setMovie(movie.data.results);
   };
-  // function addToFav(movieId, userId) {
-  //   <i class="fas fa-heart"></i>;
-  // }
 
   return (
-    
     <>
       <Media media={movie} />
       <Search media={movie} />

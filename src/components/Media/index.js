@@ -1,12 +1,35 @@
 import React from "react";
-import Description from "../Description";
+import axios from "axios";
+import Search from "../Search";
+import { useNavigate } from "react-router-dom";
 const Media = ({ media }) => {
+  const navigate = useNavigate();
+  function search(e) {
+    let textSearch = e.target.value;
+    let result = media.filter((item) => {
+      return (
+        item.trackName.toLowerCase() == textSearch.toLowerCase() ||
+        item.artistName.toLowerCase() == textSearch.toLowerCase()
+      );
+    });
+    return <Search result={result} />;
+  }
+
+  function describe(item) {
+    navigate(`/description/${{ item }}`);
+  }
   return (
     <div className="Movie">
+      <input name="text" placeholder="Search" onChange={search}></input>
+
       <ul>
         {media.map((item) => (
           <>
-            <div>
+            <div
+              onClick={() => {
+                describe(`${item}`);
+              }}
+            >
               <li key={item.trackId}>
                 {item.trackViewUrl}
                 {item.trackName}

@@ -8,7 +8,8 @@ import Movie from "./components/Movie";
 import Music from "./components/Music";
 import Bodcast from "./components/Bodcast";
 import TvShow from "./components/TvShow";
-import Software from "./components/Softwaer"
+import Software from "./components/Softwaer";
+import Description from "./components/Description";
 function App() {
   return (
     <div className="App">
@@ -16,14 +17,15 @@ function App() {
 
       <Routes>
         <Route exact path="/favorite" element={<Favorite />} />
-        <Route exact path="/search" element={<Search />} />
-        <Route path="/Media/:media" element={<Media />} />
+        {/* <Route exact path="/search" element={<Search />} /> */}
+        {/* <Route path="/Media/:media" element={<Media />} /> */}
         <Route path="/movie" element={<Movie />} />
         <Route path="/podcast" element={<Bodcast />} />
         <Route path="/music" element={<Music />} />
         <Route path="/tvshow" element={<TvShow />} />
         <Route path="/software" element={<Software />} />
         <Route path="/favorite" element={<Favorite />} />
+        <Route path="/description/:item" element={<Description />} />
       </Routes>
     </div>
   );

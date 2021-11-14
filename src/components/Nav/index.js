@@ -11,9 +11,6 @@ const Nav = () => {
       <Link to="/software">Software</Link>
       <Link to="/tvshow">Tvshow</Link>
       <Link to="/favorite">Favorite</Link>
-
-      
-      <input name="value" placeholder="Search"></input>
     </div>
   );
 };
