@@ -17,12 +17,6 @@ const Description = ({media}) => {
     console.log(info.data);
     setItem(info.data);
   };
-
-  // const id = 12345;
-  // console.log(id);
-  // const item=media.find((element,index)=>{
-  //   return element.id==id
-  // })
   return (
     <div>
       {<>

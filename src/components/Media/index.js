@@ -1,9 +1,7 @@
 import React from "react";
 import axios from "axios";
-import SearchResult from "../SearchResult";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import Description from "../Description";
 import "./style.css";
 
 const BASE_URL = "http://localhost:4000";
@@ -12,6 +10,7 @@ const Media = ({ media }) => {
   const [searchField, setSearchField] = useState("");
   const [newResult, setNewResult] = useState("");
   const navigate = useNavigate();
+
 
   function describe(item) {
     axios
@@ -39,16 +38,26 @@ const Media = ({ media }) => {
       });
   }
   function search() {
+
+
     let result = media.filter((item) => {
+      // eslint-disable-next-line
       return (
+
         item.trackName.toLowerCase() == searchField.toLowerCase() ||
         item.artistName.toLowerCase() == searchField.toLowerCase()
+
+    //     // eslint-disable-next-line
+    //     item.trackName.toLowerCase() == textSearch.toLowerCase() ||
+    //     // eslint-disable-next-line
+    //     item.artistName.toLowerCase() == textSearch.toLowerCase()
+
       );
     });
     console.log(result[0])
     setNewResult(result[0]);
-    // return <SearchResult filteredPersons={result[0]} />;
   }
+
 
   const handleChange = (e) => {
     console.log(searchField,"searchField")
@@ -100,7 +109,7 @@ const Media = ({ media }) => {
         </ul>
       </div>
     </>
-  );
+  )
 };
 
 export default Media;

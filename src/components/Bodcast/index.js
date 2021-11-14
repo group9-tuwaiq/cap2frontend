@@ -7,7 +7,7 @@ import Search from "../Search";
 import Media from "../Media";
 import "./style.css";
 
-const BASE_URL = "http://localhost:4000";
+const BASE_URL = "https://cap2-tuwaiq.herokuapp.com";
 
 const Podcast = () => {
   const [podcast, setPodcast] = useState([]);
@@ -23,10 +23,12 @@ const Podcast = () => {
   };
 
   return (
+          // eslint-disable-next-line
+
     <div className="wrapper">
       <img
         className="podcatBg"
-        src="https://static.sonovente.com/img/front/cms/eb3c9a01c223fbf3d59a2fdd3ef13929.jpg"
+        src="https://static.sonovente.com/img/front/cms/eb3c9a01c223fbf3d59a2fdd3ef13929.jpg" alt="background"
       />
       <Media media={podcast} />
       <Search media={podcast} />

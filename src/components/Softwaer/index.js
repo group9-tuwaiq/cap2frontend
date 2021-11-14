@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import Search from "../Search";
 import Media from "../Media";
 
-const BASE_URL = "http://localhost:4000";
+const BASE_URL = "https://cap2-tuwaiq.herokuapp.com";
 
 const Software = () => {
   const [software, setSoftware] = useState([]);
