@@ -25,11 +25,14 @@ const Movie = () => {
   // }
 
   return (
-    
-    <>
+    <div className="wrapper">
+      <img
+        className="movieBackground"
+        src="https://img5.goodfon.com/wallpaper/nbig/c/af/sssssss-aaaaaaaaaaa-ddddddddd-fffffffff-rrrrrrr.jpg"
+      />
       <Media media={movie} />
       <Search media={movie} />
-    </>
+    </div>
   );
 };
 
