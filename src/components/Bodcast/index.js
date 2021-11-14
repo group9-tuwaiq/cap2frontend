@@ -20,9 +20,6 @@ const Podcast = () => {
 
     setPodcast(podcast.data.results);
   };
-  // function addToFav(movieId, userId) {
-  //   <i class="fas fa-heart"></i>;
-  // }
 
   return (
     <div className="wrapper">

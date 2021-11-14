@@ -4,6 +4,7 @@ import "./style.css";
 
 const Nav = () => {
   return (
+
     <div className="nav">
       <ul>
         <li className="navItem">
@@ -32,6 +33,7 @@ const Nav = () => {
           <input className="input" name="value" placeholder="Search"></input>
         </li>
       </ul>
+
 
     </div>
   );

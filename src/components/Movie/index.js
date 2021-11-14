@@ -17,19 +17,17 @@ const Movie = () => {
 
   const getAllMovies = async () => {
     const movie = await axios.get(`${BASE_URL}/movies`);
-
     setMovie(movie.data.results);
   };
-  // function addToFav(movieId, userId) {
-  //   <i class="fas fa-heart"></i>;
-  // }
 
   return (
+
     <div className="wrapper">
       <img
         className="movieBackground"
         src="https://img5.goodfon.com/wallpaper/nbig/c/af/sssssss-aaaaaaaaaaa-ddddddddd-fffffffff-rrrrrrr.jpg"
       />
+
       <Media media={movie} />
       <Search media={movie} />
     </div>
