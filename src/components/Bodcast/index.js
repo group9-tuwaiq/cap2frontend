@@ -4,6 +4,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Search from "../Search";
 import Media from "../Media";
+import "./style.css";
 
 const BASE_URL = "http://localhost:4000";
 
@@ -24,10 +25,14 @@ const Podcast = () => {
   // }
 
   return (
-    <>
+    <div className="wrapper">
+      <img
+        className="podcatBg"
+        src="https://static.sonovente.com/img/front/cms/eb3c9a01c223fbf3d59a2fdd3ef13929.jpg"
+      />
       <Media media={podcast} />
       <Search media={podcast} />
-    </>
+    </div>
   );
 };
 

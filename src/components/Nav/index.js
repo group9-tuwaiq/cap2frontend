@@ -22,9 +22,9 @@ const Nav = () => {
         <li className="navItem">
           <Link to="/audiobook">Audiobook</Link>
         </li>
-   <li className="navItem">
+   {/* <li className="navItem">
           <Link to="/favorite">Favorite</Link>
-        </li>
+        </li> */}
  <li className="navItem">
           <Link to="/eBook">eBook</Link>
         </li>

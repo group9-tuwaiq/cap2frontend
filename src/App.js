@@ -23,7 +23,7 @@ function App() {
         <Route path="/Media/:media" element={<Media />} />
         <Route path="/movie" element={<Movie />} />
         <Route path="/podcast" element={<Bodcast />} />
-        <Route path="/music" element={<Music />} />
+        <Route path="/" element={<Music />} />
         <Route path="/tvshow" element={<TvShow />} />
         <Route path="/software" element={<Software />} />
         <Route path="/ebook" element={<Ebook />} />
