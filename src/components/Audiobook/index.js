@@ -6,7 +6,7 @@ import Search from "../Search";
 import Media from "../Media";
 import "./style.css";
 
-const BASE_URL = "http://localhost:4000";
+const BASE_URL = "https://cap2-tuwaiq.herokuapp.com";
 
 const Audiobook = () => {
   const [audiobook, setAudiobook] = useState([]);
@@ -26,9 +26,10 @@ const Audiobook = () => {
 
   return (
     <div className="audio">
+      // eslint-disable-next-line
       <img
         className="audio-background"
-        src="https://ebookfriendly.com/wp-content/uploads/2020/09/Audiobook-app-feature-wishlist.jpg"
+        src="https://ebookfriendly.com/wp-content/uploads/2020/09/Audiobook-app-feature-wishlist.jpg" alt="background"
       />
       <Media media={audiobook} />
       <Search media={audiobook} />

@@ -6,7 +6,7 @@ import Search from "../Search";
 import Media from "../Media";
 import "./style.css";
 
-const BASE_URL = "http://localhost:4000";
+const BASE_URL = "https://cap2-tuwaiq.herokuapp.com";
 
 const Ebook = () => {
   const [ebook, setEbook] = useState([]);
